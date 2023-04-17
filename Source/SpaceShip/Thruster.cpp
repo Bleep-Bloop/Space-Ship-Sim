@@ -3,38 +3,36 @@
 
 #include "Thruster.h"
 
-#include "EnhancedInputSubsystems.h"
-
-// Sets default values
-AThruster::AThruster()
+// Sets default values for this component's properties
+UThruster::UThruster()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
+	// off to improve performance if you don't need them.
+	PrimaryComponentTick.bCanEverTick = true;
 
-	ThrusterStaticMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Thruster Static Mesh"));
-	RootComponent = ThrusterStaticMesh;
+	TemporaryThrusterStaticMesh = CreateDefaultSubobject<UStaticMeshComponent>("Temp Thruster Static Mesh");
 	
 }
 
-// Called when the game starts or when spawned
-void AThruster::BeginPlay()
+// Called when the game starts
+void UThruster::BeginPlay()
 {
 	Super::BeginPlay();
 }
 
 // Called every frame
-void AThruster::Tick(float DeltaTime)
+void UThruster::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
-	Super::Tick(DeltaTime);
+	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 }
 
-void AThruster::ActivateThruster(float InputValue)
+void UThruster::ActivateThrust(float InputValue)
 {
+
 	// ToDo: Implement Add Force
-	//FVector ForwardMovement = FVector((ThrustPower * InputValue), 0, 0); // InputValue = Value.GetMagnitude()
-	//ThrusterStaticMeshComp->AddForce(ForwardMovement, NAME_None, true);
-	
+	// FVector ForwardMovement = FVector((ThrustPower * InputValue), 0, 0); // InputValue = Value.GetMagnitude()
+	// ThrusterStaticMeshComp->AddForce(ForwardMovement, NAME_None, true);
+
 	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, FString::Printf(TEXT("InputValue: %f"), InputValue));
-	
 }
 

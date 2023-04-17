@@ -3,34 +3,40 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+#include "Components/SceneComponent.h"
 #include "Thruster.generated.h"
 
-UCLASS()
-class SPACESHIP_API AThruster : public AActor
+
+UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+class SPACESHIP_API UThruster : public USceneComponent
 {
 	GENERATED_BODY()
-	
+
 public:	
-	// Sets default values for this actor's properties
-	AThruster();
+	// Sets default values for this component's properties
+	UThruster();
 
 protected:
-	// Called when the game starts or when spawned
+	// Called when the game starts
 	virtual void BeginPlay() override;
 
 private:
-	
-	UPROPERTY(EditDefaultsOnly, Category= "Components")
-	UStaticMeshComponent* ThrusterStaticMesh;
-	
-	UPROPERTY(EditAnywhere, Category = "Stats")
+
+	UPROPERTY(EditDefaultsOnly)
+	UStaticMeshComponent* TemporaryThrusterStaticMesh; // Will be removed/replaced after adding ship model
+
+	UPROPERTY(EditAnywhere)
 	float ThrusterPower = 1;
 	
 public:	
 	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-	
-	void ActivateThruster(float InputValue); // Passed FInputActionValue.Magnitude
+	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+
+	/**
+	 * ToDo: Should I pass ThrusterPower from the ship class?
+	 * @brief Applies force (ThrusterPower) along the x-axis
+	 * @param InputValue FInputActionValue.Magnitude passed from the input binding in PlayerShip class. 
+	 */
+	void ActivateThrust(float InputValue); 
 	
 };

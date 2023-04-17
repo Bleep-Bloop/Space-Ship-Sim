@@ -7,12 +7,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0bf974e1-c20b-4dd7-8c31-bd943833cfe6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpaceShip/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpaceShip/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultInput.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultInput.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Maps/Dev_Space.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Dev_Space.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SpaceShip/Character_Thruster.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SpaceShip/Character_Thruster.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SpaceShip/Character_Thruster.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SpaceShip/Character_Thruster.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SpaceShip/SpaceShip.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SpaceShip/SpaceShip.Build.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SpaceShip/Thruster.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SpaceShip/Thruster.h" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,6 +157,7 @@
       <workItem from="1681504527086" duration="117000" />
       <workItem from="1681706346360" duration="8033000" />
       <workItem from="1681739234443" duration="1112000" />
+      <workItem from="1681746936650" duration="728000" />
     </task>
     <servers />
   </component>
