@@ -5,7 +5,15 @@
     <projectFile>Intermediate/ProjectFiles/UE5.vcxproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bf974e1-c20b-4dd7-8c31-bd943833cfe6" name="Changes" comment="" />
+    <list default="true" id="0bf974e1-c20b-4dd7-8c31-bd943833cfe6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpaceShip/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpaceShip/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultInput.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultInput.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/Dev_Space.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Dev_Space.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SpaceShip/Character_Thruster.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SpaceShip/Character_Thruster.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SpaceShip/Character_Thruster.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SpaceShip/Character_Thruster.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SpaceShip/SpaceShip.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SpaceShip/SpaceShip.Build.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -151,13 +159,27 @@
       <updated>1681445165685</updated>
       <workItem from="1681445170266" duration="623000" />
       <workItem from="1681504527086" duration="117000" />
+      <workItem from="1681706346360" duration="8033000" />
+      <workItem from="1681739234443" duration="1112000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
