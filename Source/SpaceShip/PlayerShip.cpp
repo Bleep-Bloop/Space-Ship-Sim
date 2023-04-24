@@ -1,8 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
-#include "EnhancedInputSubsystems.h"
 #include "PlayerShip.h"
+#include "EnhancedInputSubsystems.h"
+
 
 #include "../../../../../../../../../../Program Files/Epic Games/UE_5.1/Engine/Plugins/EnhancedInput/Source/EnhancedInput/Public/EnhancedInputComponent.h"
 
@@ -19,6 +19,8 @@ APlayerShip::APlayerShip()
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Players Camera"));
 	
 	RearThruster = CreateDefaultSubobject<UThruster>("Back Thruster");
+	RearThruster->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform, NAME_None);
+	
 }
 
 // Called when the game starts or when spawned
@@ -58,10 +60,8 @@ void APlayerShip::Tick(float DeltaTime)
 void APlayerShip::ForwardThrust(const FInputActionValue& Value)
 {
 	
-	if(RearThruster)
-	{
-		RearThruster->ActivateThrust(Value.GetMagnitude());
-	}
+		if(RearThruster)
+			RearThruster->ActivateThrust(ShipStaticMeshComp, Value.GetMagnitude());
 	
 }
 

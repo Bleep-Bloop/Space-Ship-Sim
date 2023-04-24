@@ -7,6 +7,7 @@
 #include "GameFramework/Pawn.h"
 #include "InputActionValue.h"
 #include "Camera/CameraComponent.h"
+#include "PhysicsEngine/PhysicsThrusterComponent.h"
 #include "PlayerShip.generated.h"
 
 class UInputAction;
@@ -33,17 +34,19 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Input", meta = (AllowPrivateAccess)) //If true, properties defined in the C++ private scope will be accessible to blueprints
 	UInputAction* ForwardThrustAction;
-
-	void ForwardThrust(const FInputActionValue &Value);
 	
+	UPROPERTY(EditDefaultsOnly, Category = "Components")
+	UStaticMeshComponent* ShipStaticMeshComp;
+
 	UPROPERTY(EditAnywhere, Category="Components")
 	UThruster* RearThruster;
 
-private:
+	/**
+	 * @brief Passes player input to the attached UThruster to move ship forwards/backwards
+	 * @param Value GamePad Left Thumbstick Y-Value
+	 */
+	void ForwardThrust(const FInputActionValue &Value);
 
-	UPROPERTY(EditDefaultsOnly, Category = "Components")
-	UStaticMeshComponent* ShipStaticMeshComp;
-	
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
