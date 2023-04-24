@@ -17,6 +17,8 @@ APlayerShip::APlayerShip()
 	RootComponent = ShipStaticMeshComp;
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Players Camera"));
+	Camera->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform, NAME_None);
+
 	
 	RearThruster = CreateDefaultSubobject<UThruster>("Back Thruster");
 	RearThruster->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform, NAME_None);
