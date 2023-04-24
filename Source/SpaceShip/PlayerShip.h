@@ -56,7 +56,7 @@ protected:
 	/**
 	 * @note Ship static mesh must x & y rotation locked
 	 * @brief Passes player input to the attached UThruster to rotate ship
-	 * @param Value GamePad Left Thumbstick Y-Value
+	 * @param Value GamePad Left Thumbstick X-Value
 	 */
 	void RotateThrust(const FInputActionValue &Value);
 

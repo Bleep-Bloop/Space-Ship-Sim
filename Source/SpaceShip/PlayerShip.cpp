@@ -73,7 +73,9 @@ void APlayerShip::ForwardThrust(const FInputActionValue& Value)
 
 void APlayerShip::RotateThrust(const FInputActionValue& Value)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Black, FString::Printf(TEXT("X-Axis: %f"), Value.GetMagnitude()));
+	if(RotateThruster)
+		RotateThruster->RotateThrust(ShipStaticMeshComp, Value.GetMagnitude());
+
 }
 
 
