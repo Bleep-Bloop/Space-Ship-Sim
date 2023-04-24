@@ -22,6 +22,9 @@ APlayerShip::APlayerShip()
 	
 	RearThruster = CreateDefaultSubobject<UThruster>("Back Thruster");
 	RearThruster->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform, NAME_None);
+
+	RotateThruster = CreateDefaultSubobject<UThruster>("Rotate Thruster");
+	RotateThruster->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform, NAME_None);
 	
 }
 
@@ -49,6 +52,7 @@ void APlayerShip::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 	if(UEnhancedInputComponent *EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(PlayerInputComponent))
 	{
 		EnhancedInputComponent->BindAction(ForwardThrustAction, ETriggerEvent::Triggered, this, &APlayerShip::ForwardThrust);
+		EnhancedInputComponent->BindAction(RotateThrustAction, ETriggerEvent::Triggered, this, &APlayerShip::RotateThrust);
 	}
 	
 }
@@ -65,6 +69,11 @@ void APlayerShip::ForwardThrust(const FInputActionValue& Value)
 		if(RearThruster)
 			RearThruster->ActivateThrust(ShipStaticMeshComp, Value.GetMagnitude());
 	
+}
+
+void APlayerShip::RotateThrust(const FInputActionValue& Value)
+{
+	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Black, FString::Printf(TEXT("X-Axis: %f"), Value.GetMagnitude()));
 }
 
 

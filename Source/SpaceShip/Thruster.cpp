@@ -36,6 +36,6 @@ void UThruster::ActivateThrust(UStaticMeshComponent* ParentStaticMesh, float Inp
 		ParentStaticMesh->AddForce(ForwardThrustMoveVec, NAME_None, true);
 	}
 
-	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, FString::Printf(TEXT("UThruster::InputValue: %f"), InputValue));
+	//GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, FString::Printf(TEXT("UThruster::InputValue: %f"), InputValue));
 }
 
