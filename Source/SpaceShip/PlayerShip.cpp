@@ -18,7 +18,6 @@ APlayerShip::APlayerShip()
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Players Camera"));
 	Camera->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform, NAME_None);
-
 	
 	RearThruster = CreateDefaultSubobject<UThruster>("Back Thruster");
 	RearThruster->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform, NAME_None);
@@ -65,7 +64,6 @@ void APlayerShip::Tick(float DeltaTime)
 
 void APlayerShip::ForwardThrust(const FInputActionValue& Value)
 {
-	
 		if(RearThruster)
 			RearThruster->ActivateThrust(ShipStaticMeshComp, Value.GetMagnitude());
 	
