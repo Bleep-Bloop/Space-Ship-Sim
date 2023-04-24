@@ -5,13 +5,7 @@
     <projectFile>Intermediate/ProjectFiles/UE5.vcxproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bf974e1-c20b-4dd7-8c31-bd943833cfe6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpaceShip/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpaceShip/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/BP_PlayerShip.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BP_PlayerShip.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/BP_SpaceSimGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BP_SpaceSimGameMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SpaceShip/PlayerShip.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SpaceShip/PlayerShip.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SpaceShip/PlayerShip.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SpaceShip/PlayerShip.h" afterDir="false" />
-    </list>
+    <list default="true" id="0bf974e1-c20b-4dd7-8c31-bd943833cfe6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -162,7 +156,7 @@
       <workItem from="1681746936650" duration="728000" />
       <workItem from="1681789316228" duration="2100000" />
       <workItem from="1682296732577" duration="11523000" />
-      <workItem from="1682348947999" duration="2926000" />
+      <workItem from="1682348947999" duration="3397000" />
     </task>
     <servers />
   </component>
