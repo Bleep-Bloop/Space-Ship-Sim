@@ -10,7 +10,8 @@ UThruster::UThruster()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
-	TemporaryThrusterStaticMesh = CreateDefaultSubobject<UStaticMeshComponent>("Temp Thruster Static Mesh");
+	//TemporaryThrusterStaticMesh = CreateDefaultSubobject<UStaticMeshComponent>("Temp Thruster Static Mesh");
+	//TemporaryThrusterStaticMesh->SetSimulatePhysics(true);
 	
 }
 
@@ -26,13 +27,15 @@ void UThruster::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 }
 
-void UThruster::ActivateThrust(float InputValue)
+void UThruster::ActivateThrust(UStaticMeshComponent* ParentStaticMesh, float InputValue)
 {
 
-	// ToDo: Implement Add Force
-	// FVector ForwardMovement = FVector((ThrustPower * InputValue), 0, 0); // InputValue = Value.GetMagnitude()
-	// ThrusterStaticMeshComp->AddForce(ForwardMovement, NAME_None, true);
+	if(ParentStaticMesh)
+	{
+		FVector ForwardThrustMoveVec = (FVector::RightVector * ThrusterPower) * InputValue;
+		ParentStaticMesh->AddForce(ForwardThrustMoveVec, NAME_None, true);
+	}
 
-	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, FString::Printf(TEXT("InputValue: %f"), InputValue));
+	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, FString::Printf(TEXT("UThruster::InputValue: %f"), InputValue));
 }
 
