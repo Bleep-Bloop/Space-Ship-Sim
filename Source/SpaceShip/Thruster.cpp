@@ -9,8 +9,6 @@ UThruster::UThruster()
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
-
-	TemporaryThrusterStaticMesh = CreateDefaultSubobject<UStaticMeshComponent>("Temp Thruster Static Mesh");
 	
 }
 
@@ -26,13 +24,25 @@ void UThruster::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 }
 
-void UThruster::ActivateThrust(float InputValue)
+void UThruster::ActivateThrust(UStaticMeshComponent* ParentStaticMesh, float InputValue) const
 {
 
-	// ToDo: Implement Add Force
-	// FVector ForwardMovement = FVector((ThrustPower * InputValue), 0, 0); // InputValue = Value.GetMagnitude()
-	// ThrusterStaticMeshComp->AddForce(ForwardMovement, NAME_None, true);
+	if(ParentStaticMesh)
+	{
+		FVector ForwardThrustMoveVector = (ParentStaticMesh->GetRightVector() * ThrusterPower) * InputValue;
+		ParentStaticMesh->AddForce(ForwardThrustMoveVector, NAME_None, true);
+	}
+	
+}
 
-	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, FString::Printf(TEXT("InputValue: %f"), InputValue));
+void UThruster::RotateThrust(UStaticMeshComponent* ParentStaticMesh, float InputValue) const
+{
+
+	if(ParentStaticMesh)
+	{
+		FVector RotateThrustMoveVector = FVector(0,0,RotateThrusterPower) * InputValue;
+		ParentStaticMesh->AddTorqueInDegrees(RotateThrustMoveVector, NAME_None, true);
+	}
+	
 }
 

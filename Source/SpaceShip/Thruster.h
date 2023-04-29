@@ -16,27 +16,38 @@ public:
 	// Sets default values for this component's properties
 	UThruster();
 
+	// Called every frame
+	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+
+	/**
+	* ToDo: Should I pass ThrusterPower from the ship class?
+	* @brief Applies force (ThrusterPower) along the X-axis
+	* @param ParentStaticMesh StaticMeshComponent of the parent class. Used to AddTorque.
+	* @param InputValue FInputActionValue.Magnitude passed from the input binding in PlayerShip class. 
+	*/
+	void ActivateThrust(UStaticMeshComponent* ParentStaticMesh, float InputValue) const;
+
+	/**
+	* ToDo: Should I pass ThrusterPower from the ship class?
+	* @brief Adds torque (RotateThrusterPower) around Z-axis
+	* @param ParentStaticMesh StaticMeshComponent of the parent class. Used to AddTorque.
+	* @param InputValue FInputActionValue.Magnitude passed from the input binding in PlayerShip class. 
+	*/
+	void RotateThrust(UStaticMeshComponent* ParentStaticMesh, float InputValue) const;
+
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
 private:
-
-	UPROPERTY(EditDefaultsOnly)
-	UStaticMeshComponent* TemporaryThrusterStaticMesh; // Will be removed/replaced after adding ship model
-
-	UPROPERTY(EditAnywhere)
-	float ThrusterPower = 1;
 	
-public:	
-	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	UPROPERTY(EditAnywhere)
+	float ThrusterPower = 2500;
 
 	/**
-	 * ToDo: Should I pass ThrusterPower from the ship class?
-	 * @brief Applies force (ThrusterPower) along the x-axis
-	 * @param InputValue FInputActionValue.Magnitude passed from the input binding in PlayerShip class. 
+	 * @note Change the parent's static mesh 'Angular Drag' to effect rotation stop (3.5 is a good starting point)
 	 */
-	void ActivateThrust(float InputValue); 
+	UPROPERTY(EditAnywhere)
+	float RotateThrusterPower = 300;
 	
 };
