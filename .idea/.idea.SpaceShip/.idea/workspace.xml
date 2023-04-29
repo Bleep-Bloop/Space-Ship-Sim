@@ -7,6 +7,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0bf974e1-c20b-4dd7-8c31-bd943833cfe6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpaceShip/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpaceShip/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SpaceShip/PlayerShip.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SpaceShip/PlayerShip.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +159,7 @@
       <workItem from="1681746936650" duration="728000" />
       <workItem from="1681789316228" duration="2100000" />
       <workItem from="1682296732577" duration="11523000" />
-      <workItem from="1682348947999" duration="13138000" />
+      <workItem from="1682348947999" duration="14580000" />
     </task>
     <servers />
   </component>

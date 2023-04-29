@@ -75,5 +75,3 @@ void APlayerShip::RotateThrust(const FInputActionValue& Value)
 		RotateThruster->RotateThrust(ShipStaticMeshComp, Value.GetMagnitude());
 
 }
-
-
