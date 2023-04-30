@@ -2,6 +2,8 @@
 
 #include "Planet.h"
 
+#include "Asteroid.h"
+
 // Sets default values
 APlanet::APlanet()
 {

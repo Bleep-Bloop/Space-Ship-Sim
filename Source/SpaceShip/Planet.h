@@ -3,7 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Components/SphereComponent.h"
 #include "GameFramework/Actor.h"
 #include "Planet.generated.h"
 
@@ -32,7 +31,12 @@ protected:
 	UPROPERTY(EditAnywhere)
 	UStaticMeshComponent* PlanetStaticMesh;
 
+	//UPROPERTY(EditAnywhere)
+	//UStaticMeshComponent* TestStaticMesh;
+	
 	// ToDo: AOrbitEffector* OrbitEffector;
+	//UPROPERTY(EditAnywhere)
+	//AOrbitEffector* OrbitEffector;
 	
 public:	
 	// Called every frame
